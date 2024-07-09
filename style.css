@@ -1,0 +1,31 @@
+/* Imposta lo sfondo nero e copre l'intera altezza della finestra */
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden; /* Evita che compaiano barre di scorrimento */
+}
+
+/* Stile per i cuori */
+span {
+  background: url("https://cdn0.iconfinder.com/data/icons/3d-front-premium/256/heart-front-premium.png");
+  width: 100px;
+  height: 100px;
+  position: absolute; /* Posizionamento assoluto per poterli mettere ovunque sulla pagina */
+  background-size: cover; /* Adatta l'immagine alle dimensioni del cuore */
+  pointer-events: none; /* I cuori non interferiscono con il mouse */
+  transform: translate(-50%, -50%); /* Centra il cuore nel punto cliccato */
+  animation: animate 1s linear; /* Applica l'animazione definita sotto */
+}
+
+/* Definisce l'animazione per i cuori */
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%); /* Posizione iniziale centrata */
+    opacity: 1; /* Cuore completamente visibile all'inizio */
+  }
+  100% {
+    transform: translate(-50%, -200%); /* Cuore si sposta verso l'alto */
+    opacity: 0; /* Cuore diventa trasparente */
+  }
+}
